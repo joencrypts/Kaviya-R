@@ -305,6 +305,9 @@ $(function() {
   // --------------------------------------------- //
   // Contact Form Start
   // --------------------------------------------- //
+  // Initialize EmailJS with your Public Key
+  emailjs.init('CXB6PIY0dw9l46kBR');
+
   $("#contact-form").submit(function(e) { // EmailJS integration
     e.preventDefault();
     var th = $(this);
@@ -317,7 +320,7 @@ $(function() {
       message: th.find('textarea[name="Message"]').val()
     };
     // Send using EmailJS
-    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
+    emailjs.send('service_h3uwutr', 'template_epg179m', formData)
       .then(function(response) {
         $('.contact').find('.form').addClass('is-hidden');
         $('.contact').find('.form__reply').addClass('is-visible');
